@@ -13,7 +13,7 @@ function AddProduct() {
     const getTotalAmount = async () => {
         try {
 
-            const res = await axios.get("https://backend-uaa2.onrender.com/api/order/total-amount");
+            const res = await axios.get("https://backend-uaa2.onrender.com/api/order/total-amount"); 
 
             if (res.data.success) {
                 setTotalAmount(res.data.totalAmount);
