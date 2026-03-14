@@ -27,7 +27,7 @@ function Login() {
             toast.success("Login Successful");
 
             setTimeout(() => {
-                navigate("/Dashboard");
+                navigate("/Dashbord");
             }, 1500);
 
         } else {
