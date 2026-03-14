@@ -10,7 +10,7 @@ function UserList() {
 
     const fetchUser = async () => {
         try {
-            const response = await axios.get("https://backend-uaa2.onrender.com/api/user/list");
+            const response = await axios.get("https://backend-uaa2.onrender.com/api/user/list"); 
 
             if (response.data.success) {
                 setUser(response.data.Users);
