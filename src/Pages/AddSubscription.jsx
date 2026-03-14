@@ -29,7 +29,7 @@ function AddSubscription() {
     const fetchSingleSubscription = async () => {
         try {
             const response = await axios.get(
-                `http://localhost:5000/api/subscription/list`
+                `https://backend-uaa2.onrender.com/api/subscription/list`
             );
 
             const data = response.data.subscriptions.find(
@@ -57,7 +57,7 @@ function AddSubscription() {
             let response;
             if (isEdit) {
                 response = await axios.put(
-                    `http://localhost:5000/api/subscription/update/${id}`,
+                    `https://backend-uaa2.onrender.com/api/subscription/update/${id}`,
                     {status, price, discount, premium, build, processing}
                 );
 
@@ -72,7 +72,7 @@ function AddSubscription() {
 
             } else {
                 response = await axios.post(
-                    "http://localhost:5000/api/subscription/add",
+                    "https://backend-uaa2.onrender.com/api/subscription/add",
                     {status, price, discount, premium, build, processing}
                 );
 
