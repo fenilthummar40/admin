@@ -12,7 +12,7 @@ function ProductList() {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/product/list");
+            const response = await axios.get("https://backend-uaa2.onrender.com/api/product/list");
 
             if (response.data.success) {
                 setProducts(response.data.products);
@@ -43,7 +43,7 @@ function ProductList() {
 
     const updateProduct = async (id, formData) => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/product/update/${id}`, formData);
+            const response = await axios.put(`https://backend-uaa2.onrender.com/api/product/update/${id}`, formData);
 
             if (response.data.success) {
                 toast.success("Product Updated Successfully");
@@ -112,7 +112,7 @@ function ProductList() {
 
                                             <td className="p-5">
                                                 <div className="flex items-center gap-3">
-                                                    <img src={`http://localhost:5000/images/${item.image}`}
+                                                    <img src={`https://backend-uaa2.onrender.com/images/${item.image}`}
                                                          alt={item.name} className="w-16 rounded-md object-cover"/>
                                                     <div>
                                                         <p className="font-medium line-clamp-2 sm:text-sm dark:text-white">{item.name}</p>
