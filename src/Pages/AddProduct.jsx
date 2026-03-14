@@ -12,7 +12,7 @@ function AddProduct() {
     const {id} = useParams();
     const isEditMode = Boolean(id);
 
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState(null); 
     const [existingImage, setExistingImage] = useState("");
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
