@@ -26,7 +26,7 @@ function AddProduct() {
 
     useEffect(() => {
         if (isEditMode) {
-            axios.get(`http://localhost:5000/api/product/${id}`)
+            axios.get(`https://backend-uaa2.onrender.com/api/product/${id}`)
                 .then(res => {
                     if (res.data.success) {
                         const product = res.data.product;
@@ -70,11 +70,11 @@ function AddProduct() {
             let response;
 
             if (isEditMode) {
-                response = await axios.put(`http://localhost:5000/api/product/update/${id}`,
+                response = await axios.put(`https://backend-uaa2.onrender.com/api/product/update/${id}`,
                     {name, description, category, subcategory, size, price, stock, status, bestseller}
                 );
             } else {
-                response = await axios.post("http://localhost:5000/api/product/add",
+                response = await axios.post("https://backend-uaa2.onrender.com/api/product/add",
                     {name, description, category, subcategory, size, price, stock, status, bestseller}
                 );
             }
@@ -129,7 +129,7 @@ function AddProduct() {
                                 <div>
                                     <label htmlFor="image" className="cursor-pointer">
                                         <img className='w-52' src={
-                                            image ? URL.createObjectURL(image) : existingImage ? `http://localhost:5000/images/${existingImage}` : assets.uplod_area}
+                                            image ? URL.createObjectURL(image) : existingImage ? `https://backend-uaa2.onrender.com/images/${existingImage}` : assets.uplod_area}
                                              alt="upload"/>
                                         <input type="file" id='image' hidden
                                                onChange={(e) => setImage(e.target.files[0])}/>
