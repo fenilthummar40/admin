@@ -18,7 +18,7 @@ function AddSubscription() {
     const [discount, setDiscount] = useState("");
     const [premium, setPremium] = useState("");
     const [build, setBuild] = useState("");
-    const [processing, setProcessing] = useState("");
+    const [processing, setProcessing] = useState(""); 
 
     useEffect(() => {
         if (isEdit) {
