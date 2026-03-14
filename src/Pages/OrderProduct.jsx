@@ -10,7 +10,7 @@ function OrderList() {
 
     const fetchOrder = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/order/list");
+            const response = await axios.get("https://backend-uaa2.onrender.com/api/order/list");
 
             if (response.data.success) {
                 setOrder(response.data.Orders);
@@ -27,7 +27,7 @@ function OrderList() {
 
     const updateStatus = async (orderId, status) => {
         try {
-            const res = await axios.put(`http://localhost:5000/api/order/update-status/${orderId}`, {
+            const res = await axios.put(`https://backend-uaa2.onrender.com/api/order/update-status/${orderId}`, {
                 status: status
             });
 
@@ -68,7 +68,7 @@ function OrderList() {
                                             <div className='flex items-center gap-5'>
                                                 <div>
                                                     <img className='w-24 rounded-lg'
-                                                         src={`http://localhost:5000/uploads/${product.image}`} alt=""/>
+                                                         src={`https://backend-uaa2.onrender.com/uploads/${product.image}`} alt=""/>
                                                 </div>
                                                 <div>
                                                     <h6 className='font-semibold text-sm sm:text-lg dark:text-white'>{product.name}</h6>
