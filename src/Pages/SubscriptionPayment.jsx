@@ -10,7 +10,7 @@ function SubscriptionPayment() {
 
     const fetchSubscriptionpayment = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/subscriptionpayment/list");
+            const response = await axios.get("https://backend-uaa2.onrender.com/api/subscriptionpayment/list");
 
             if (response.data.success) {
                 setSubscriptionpayment(response.data.Subscriptionpayments);
