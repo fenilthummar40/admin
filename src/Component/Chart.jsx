@@ -40,7 +40,7 @@ const Chart = () => {
     const getMonthlyAmounts = async () => {
         try {
 
-            const res = await axios.get("https://backend-uaa2.onrender.com/api/order/monthly-amount");
+            const res = await axios.get("https://backend-uaa2.onrender.com/api/order/monthly-amount"); 
 
             if (res.data.success) {
 
