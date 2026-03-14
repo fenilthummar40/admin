@@ -10,7 +10,7 @@ function OrderList() {
 
     const fetchOrder = async () => {
         try {
-            const response = await axios.get("https://backend-uaa2.onrender.com/api/order/list");
+            const response = await axios.get("https://backend-uaa2.onrender.com/api/order/list"); 
 
             if (response.data.success) {
                 setOrder(response.data.Orders);
