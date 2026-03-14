@@ -10,7 +10,7 @@ function ContactList() {
 
     const fetchContact = async () => {
         try {
-            const response = await axios.get("https://backend-uaa2.onrender.com/api/contact/list");
+            const response = await axios.get("https://backend-uaa2.onrender.com/api/contact/list"); 
 
             if (response.data.success) {
                 setContact(response.data.Contacts);
