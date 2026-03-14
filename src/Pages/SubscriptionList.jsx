@@ -14,7 +14,7 @@ function SubscriptionList() {
     const fetchSubscription = async () => {
         try {
             const response = await axios.get(
-                "https://backend-uaa2.onrender.com/api/subscription/list"
+                "https://backend-uaa2.onrender.com/api/subscription/list" 
             );
 
             if (response.data.success) {
