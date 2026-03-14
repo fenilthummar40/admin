@@ -10,7 +10,7 @@ function FeedbackList() {
 
     const fetchFeedback = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/feedback/list");
+            const response = await axios.get("https://backend-uaa2.onrender.com/api/feedback/list");
 
             if (response.data.success) {
                 setFeedback(response.data.Feedbacks);
