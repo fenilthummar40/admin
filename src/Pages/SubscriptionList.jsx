@@ -14,7 +14,7 @@ function SubscriptionList() {
     const fetchSubscription = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/subscription/list"
+                "https://backend-uaa2.onrender.com/api/subscription/list"
             );
 
             if (response.data.success) {
@@ -35,7 +35,7 @@ function SubscriptionList() {
 
     const deleteSubscription = async (id) => {
         try {
-            const response = await axios.delete(`http://localhost:5000/api/subscription/delete/${id}`);
+            const response = await axios.delete(`https://backend-uaa2.onrender.com/api/subscription/delete/${id}`);
 
             if (response.data.success) {
                 toast.success("Subscription Deleted");
