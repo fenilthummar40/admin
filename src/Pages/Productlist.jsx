@@ -29,7 +29,7 @@ function ProductList() {
 
     const deleteProduct = async (id) => {
         try {
-            const response = await axios.delete(`http://localhost:5000/api/product/delete/${id}`);
+            const response = await axios.delete(`https://backend-uaa2.onrender.com/api/product/delete/${id}`);
 
             if (response.data.success) {
                 toast.success("Product Deleted");
