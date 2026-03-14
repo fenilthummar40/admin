@@ -13,7 +13,7 @@ function AddProduct() {
     const getTotalAmount = async () => {
         try {
 
-            const res = await axios.get("http://localhost:5000/api/order/total-amount");
+            const res = await axios.get("https://backend-uaa2.onrender.com/api/order/total-amount");
 
             if (res.data.success) {
                 setTotalAmount(res.data.totalAmount);
@@ -33,7 +33,7 @@ function AddProduct() {
     const getTotalProduct = async () => {
         try {
 
-            const res = await axios.get("http://localhost:5000/api/product/total-product");
+            const res = await axios.get("https://backend-uaa2.onrender.com/api/product/total-product");
             if (res.data.success) {
                 setTotalProduct(res.data.totalProduct);
             }
@@ -51,7 +51,7 @@ function AddProduct() {
     const getTotalOrder = async () => {
         try {
 
-            const res = await axios.get("http://localhost:5000/api/order/total-order");
+            const res = await axios.get("https://backend-uaa2.onrender.com/order/total-order");
             if (res.data.success) {
                 setTotalOrder(res.data.totalOrder);
             }
@@ -69,7 +69,7 @@ function AddProduct() {
 
     const getTotalUser = async () => {
         try {
-            const res = await axios.get("http://localhost:5000/api/user/total-users");
+            const res = await axios.get("https://backend-uaa2.onrender.com/api/user/total-users");
 
             if (res.data.success) {
                 setTotalUser(res.data.totalUser);
