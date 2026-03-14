@@ -51,7 +51,7 @@ function AddProduct() {
     const getTotalOrder = async () => {
         try {
 
-            const res = await axios.get("https://backend-uaa2.onrender.com/order/total-order");
+            const res = await axios.get("https://backend-uaa2.onrender.com/api/order/total-order");
             if (res.data.success) {
                 setTotalOrder(res.data.totalOrder);
             }
