@@ -38,48 +38,47 @@ function SubscriptionPayment() {
                         </div>
 
                         <div className='border w-full p-5 dark:border-secondary'>
-                            {subscriptionpayment.length > 0 ? (
-                                subscriptionpayment.map((item) => (
-                                    <div key={item._id} className="mb-4 pb-2">
-                                        <div
-                                            className="border rounded-lg overflow-hidden shadow-sm dark:border-secondary overflow-x-auto overflow-y-auto">
-                                            <table className="w-full text-sm text-left border-collapse">
-                                                <thead>
-                                                <tr className="bg-secondary/20 text-gray-700">
-                                                    <th className="p-4 font-semibold dark:text-white">First Name</th>
-                                                    <th className="p-4 font-semibold dark:text-white">Last Name</th>
-                                                    <th className="p-4 font-semibold dark:text-white">Phone</th>
-                                                    <th className="p-4 font-semibold dark:text-white">Price</th>
-                                                </tr>
-                                                </thead>
 
-                                                <tbody>
-                                                {subscriptionpayment.length > 0 ? (
-                                                    subscriptionpayment.map((item) => (
-                                                        <tr key={item._id}
-                                                            className="border-t hover:bg-gray-50 transition duration-200 dark:border-secondary">
-                                                            <td className="p-4 dark:text-light">{item.first_name}</td>
-                                                            <td className="p-4 dark:text-light">{item.last_name}</td>
-                                                            <td className="p-4 dark:text-light">{item.phone}</td>
-                                                            <td className="p-4 dark:text-light">{item.price}</td>
-                                                        </tr>
-                                                    ))
-                                                ) : (
-                                                    <tr>
-                                                        <td colSpan="4" className="text-center p-6 text-gray-500">No
-                                                            Contacts Found
-                                                        </td>
-                                                    </tr>
-                                                )}
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                ))
-                            ) : (
-                                <p>No Contacts Found</p>
-                            )}
-                        </div>
+    <div className="border rounded-lg overflow-hidden shadow-sm dark:border-secondary overflow-x-auto">
+
+        <table className="w-full text-sm text-left border-collapse">
+
+            <thead>
+                <tr className="bg-secondary/20 text-gray-700">
+                    <th className="p-4 font-semibold dark:text-white">First Name</th>
+                    <th className="p-4 font-semibold dark:text-white">Last Name</th>
+                    <th className="p-4 font-semibold dark:text-white">Phone</th>
+                    <th className="p-4 font-semibold dark:text-white">Price</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {subscriptionpayment.length > 0 ? (
+                    subscriptionpayment.map((item) => (
+                        <tr
+                            key={item._id}
+                            className="border-t hover:bg-gray-50 transition duration-200 dark:border-secondary"
+                        >
+                            <td className="p-4 dark:text-light">{item.first_name}</td>
+                            <td className="p-4 dark:text-light">{item.last_name}</td>
+                            <td className="p-4 dark:text-light">{item.phone}</td>
+                            <td className="p-4 dark:text-light">₹ {item.price}</td>
+                        </tr>
+                    ))
+                ) : (
+                    <tr>
+                        <td colSpan="4" className="text-center p-6 text-gray-500">
+                            No Subscription Payments Found
+                        </td>
+                    </tr>
+                )}
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
                     </div>
                 </div>
             </section>
