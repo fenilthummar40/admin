@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Header from "../Component/Header.jsx";
 import Scroll from "../Component/Scroll.jsx";
 import Sidebar from "../Component/Sidebar.jsx";
-import {IconBrandProducthunt, IconComet, IconDropletDown, IconTransfer, IconUser} from "@tabler/icons-react";
+import {IconBrandProducthunt, IconComet, IconDropletDown, IconMenu, IconTransfer, IconUser} from "@tabler/icons-react";
 import Chart from "../Component/Chart.jsx";
 import axios from "axios";
 
@@ -13,7 +13,7 @@ function AddProduct() {
     const getTotalAmount = async () => {
         try {
 
-            const res = await axios.get("https://backend-uaa2.onrender.com/api/order/total-amount"); 
+            const res = await axios.get("https://backend-uaa2.onrender.com/api/order/total-amount");
 
             if (res.data.success) {
                 setTotalAmount(res.data.totalAmount);
@@ -93,6 +93,8 @@ function AddProduct() {
     ).toFixed(2);
 
 
+    const [openSidebar, setOpenSidebar] = useState(false);
+
     return (
         <>
             <Scroll/>
@@ -101,13 +103,24 @@ function AddProduct() {
             <section className='mt-5 sm:mt-10'>
                 <div className='max-w-7xl mx-auto px-5'>
                     <div className='flex gap-5'>
-                        <div className='w-1/4 hidden md:block'>
+                        <div
+                            className={`fixed md:static top-0 left-0 h-full z-50 w-64 bg-white dark:bg-dark transform transition-transform duration-300 ${openSidebar ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
                             <Sidebar/>
                         </div>
+                        {openSidebar && (
+                            <div className="fixed inset-0 bg-black/50 md:hidden z-40"
+                                 onClick={() => setOpenSidebar(false)}/>
+                        )}
 
                         <div className='border w-full p-5 dark:border-secondary'>
                             <div className="flex items-center justify-between">
-                                <h6 className="text-2xl font-semibold dark:text-white">Dashboard Overview</h6>
+                                <div className='flex items-center gap-5'>
+                                    <IconMenu
+                                        className="cursor-pointer md:hidden"
+                                        onClick={() => setOpenSidebar(true)}
+                                    />
+                                    <h6 className="text-2xl font-semibold dark:text-white">Dashboard Overview</h6>
+                                </div>
 
                                 <div className="relative w-48">
                                     <select
